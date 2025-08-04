@@ -5,7 +5,6 @@ const nextConfig = {
   },
   images: {
     domains: ['images.unsplash.com'],
-    unoptimized: true, // Required for static export
   },
   // Disable TypeScript checking during build
   typescript: {
@@ -15,12 +14,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Static export configuration
-  output: 'export',
-  trailingSlash: true,
-  // Netlify doesn't need basePath - it handles routing automatically
-  basePath: '',
-  assetPrefix: '',
+  // Heroku configuration
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
 }
 
 module.exports = nextConfig

@@ -1,0 +1,58 @@
+{
+  "name": "ABCal - Household Calendar",
+  "description": "A beautiful, shared family calendar with real-time sync. Perfect for keeping your household organized!",
+  "repository": "https://github.com/yourusername/abcal",
+  "logo": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop&q=80",
+  "keywords": [
+    "next.js", 
+    "react", 
+    "calendar", 
+    "supabase", 
+    "family", 
+    "household", 
+    "scheduling",
+    "real-time",
+    "sync"
+  ],
+  "image": "heroku/nodejs",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "description": "Your Supabase project URL (found in Project Settings → API)",
+      "value": "",
+      "required": true
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": {
+      "description": "Your Supabase anonymous/public key (found in Project Settings → API)",
+      "value": "",
+      "required": true
+    },
+    "SUPABASE_SERVICE_ROLE_KEY": {
+      "description": "Your Supabase service role key - KEEP THIS SECRET! (found in Project Settings → API)",
+      "value": "",
+      "required": true
+    },
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo '🎉 ABCal deployed successfully! Your household calendar is now live!'"
+  },
+  "success_url": "/",
+  "website": "https://github.com/tommyaipsd/NetCal"
+}
